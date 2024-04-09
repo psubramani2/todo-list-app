@@ -6,6 +6,8 @@
 4. Standalone components and pipe
 5. Observable - simple example
 6. ng-template vs ng-container vs ngTemplateOutlet
+7. viewchild vs contentchild ,accessing the child elements from parent
+8. content projection using select on parent component
 
 # TodoListApp
 

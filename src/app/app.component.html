@@ -1,1 +1,38 @@
- <app-todo-list></app-todo-list>
+<div>
+    <h3>Ngrx store Todo list app</h3>
+    <app-todo-list></app-todo-list>
+</div>
+
+
+<div>
+    <h3> Parent child message passing </h3>
+    <app-child [input_data]="'Message from Parent'" (returnMessage)="returnMessaege($event)"></app-child>
+
+    <br>
+    <span> {{receivedMessage}}</span>
+</div>
+
+<div>
+    <h3> Simple table with filter using pure pipes</h3>
+    Search on the below table : <input type="text" [(ngModel)]="filterText" placeholder="filter" />
+    <br>
+    <br>
+    <table class="tbl-cls">
+        <tr>
+            <td>
+                Sno
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                Age
+            </td>
+        </tr>
+        <tr *ngFor="let item of employeeDetails| filter:  'name' :filterText; index as i;filterUser">
+            <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+        </tr>
+    </table>
+</div>

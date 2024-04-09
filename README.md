@@ -4,6 +4,8 @@
 2. Pure pipe implementation
 3. @input and @output decorator
 4. Standalone components and pipe
+5. Observable - simple example
+6. ng-template vs ng-container vs ngTemplateOutlet
 
 # TodoListApp
 

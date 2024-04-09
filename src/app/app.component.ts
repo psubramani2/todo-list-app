@@ -10,6 +10,7 @@ import { AppChildComponent } from './app-child/app-child.component';
 
 import { PipeTransform, Injectable } from '@angular/core';
 import { SimpleServiceService } from './simple.service.service';
+import {CustomDirectiveDirective,AutoCaptialDirective} from './custom-directive.directive';
 
 @Pipe({
   standalone: true,
@@ -30,7 +31,7 @@ export class FilterPipe implements PipeTransform {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, TodoListComponent, AppChildComponent, FormsModule, FilterPipe],
+  imports: [RouterOutlet, CommonModule, TodoListComponent, AppChildComponent, FormsModule, FilterPipe,CustomDirectiveDirective,AutoCaptialDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [SimpleServiceService]

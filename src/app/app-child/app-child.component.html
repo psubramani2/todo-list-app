@@ -4,3 +4,12 @@
 
 <input type="button" value="ReturnMessage" (click)="returnMessageToParent()">
 
+
+<div>
+    <h3>Child Component</h3>
+    <div class="b-p-10">
+        <ng-content select="[header]"></ng-content> <br>
+        <ng-content select="[body]"></ng-content> <br> <!-- This is where content projection happens -->
+        <ng-content select="[footer]"></ng-content> <br>
+    </div>
+</div>

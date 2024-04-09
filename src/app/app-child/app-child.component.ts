@@ -17,4 +17,8 @@ export class AppChildComponent {
     this.returnMessage.emit('parent message received, the message is'+this.input_data);
   }
 
+  doSomething(){
+    alert('Method from the child component has been called');
+  }
+
 }

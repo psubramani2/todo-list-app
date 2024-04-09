@@ -6,7 +6,7 @@
 
 <div>
     <h3> Parent child message passing </h3>
-    <app-child [input_data]="'Message from Parent'" (returnMessage)="returnMessaege($event)"></app-child>
+    <app-child header [input_data]="'Message from Parent'" (returnMessage)="returnMessaege($event)"></app-child>
 
     <br>
     <span> {{receivedMessage}}</span>
@@ -72,4 +72,14 @@
     </ng-container>
     
     
+</div>
+
+
+<div>
+    <h3>viewChild vs Contenchild example'</h3>
+    <app-child #childRef>
+        <span header #projectedContent>Projected Header content</span>
+        <span body>Projected body content</span> 
+        <span footer>Projected footer content</span> 
+    </app-child>
 </div>

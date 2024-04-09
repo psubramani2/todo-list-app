@@ -36,3 +36,40 @@
         </tr>
     </table>
 </div>
+
+<div>
+    <h3> Fake API call and Used observable operators</h3>
+    <div *ngIf="data">
+        Data from Observable: {{ data }}
+      </div>
+</div>
+
+<div>
+    <h3>ng-template vs ng-container vs ngTemplateOutlet</h3>
+    <ng-template [ngIf]="data" #template1>
+            <div><strong>If data is avaliable then ng-template content will be visible</strong></div>
+    </ng-template>
+
+    <ng-container *ngIf="data" >
+        <div><strong>If data is avaliable then ng-conatiner content will be visible</strong></div>
+    </ng-container>
+
+    <ng-container >
+        <div *ngFor="let emp of employeeDetails;">
+            <ng-template #template2 [ngIf]="emp.name !=''">
+                <div class="b-p-10">{{emp.name}} {{emp.age}}</div>
+            </ng-template>
+        </div>
+    </ng-container>
+
+
+    <ng-container *ngTemplateOutlet="template1">
+        <div><strong>data will be visible if ngTemplateOutlet data will be presented</strong>i.e template1 presented on the above lines </div>
+    </ng-container>
+
+    <ng-container>
+        <div><strong>data will be visible if ngTemplateOutlet data will be presented</strong>i.e template1 presented on the above lines </div>
+    </ng-container>
+    
+    
+</div>

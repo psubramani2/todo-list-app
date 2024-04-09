@@ -9,6 +9,7 @@ import { TodoListComponent } from './todo-list.component';
 import { AppChildComponent } from './app-child/app-child.component';
 
 import {  PipeTransform,Injectable } from '@angular/core';
+import { SimpleServiceService } from './simple.service.service';
 
 @Pipe({
   standalone: true,
@@ -31,7 +32,8 @@ export class FilterPipe implements PipeTransform {
   standalone: true,
   imports: [RouterOutlet, CommonModule, TodoListComponent, AppChildComponent, FormsModule,FilterPipe],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  providers:[SimpleServiceService]
 })
 export class AppComponent {
   title = 'todo-list-app';
@@ -43,9 +45,25 @@ export class AppComponent {
   { name: 'sathis', age: 18 },
   { name: 'rajesh', age: 45 }]
 
+  data:number | undefined;
 
   returnMessaege(event: string) {
     this.receivedMessage = event;
+  }
+
+  constructor(private myservice:SimpleServiceService){
+
+  }
+
+  ngOnInit(){
+    this.myservice.getSimpleObservable().subscribe({
+      next:(value:number) =>{
+        this.data=value; 
+      }, 
+      complete: () => {
+        console.log('Observable completed');
+      }
+    });
   }
 
 }

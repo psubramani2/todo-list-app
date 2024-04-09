@@ -5,3 +5,8 @@
 th,td {
     border: 1px solid;
 }
+
+.b-p-10 {
+    padding: 10px;
+    border: 1px solid;
+}

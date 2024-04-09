@@ -1,3 +1,10 @@
+# Concepts covered so far in this project
+
+1. Todo list application with Ngrx store - reducer, effects, selectors..etc
+2. Pure pipe implementation
+3. @input and @output decorator
+4. Standalone components and pipe
+
 # TodoListApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
